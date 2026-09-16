@@ -2,7 +2,7 @@ public class GlutenFreePizza implements Pizza {
 
     private PizzaType pizzaType;
 
-    public CheesePizza() {
+    public GlutenFreePizza() {
         this.pizzaType = PizzaType.GLUTEN_FREE;
     }
 

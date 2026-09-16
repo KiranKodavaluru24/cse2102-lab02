@@ -3,11 +3,11 @@ public class VeganPizza implements Pizza {
     private PizzaType pizzaType;
 
     public VeganPizza() {
-        this.pizzaType = PizzaType.VAGEN;
+        this.pizzaType = PizzaType.VEGAN;
     }
 
     public void prepare(){
-        System.out.println("Preparing a VAGEN " + TranslatePizzaType.fromPizzaTypeEnumToString(pizzaType));
+        System.out.println("Preparing a VEGAN " + TranslatePizzaType.fromPizzaTypeEnumToString(pizzaType));
     }
 
     public void bake(){
