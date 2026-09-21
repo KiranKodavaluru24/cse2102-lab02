@@ -57,4 +57,22 @@ public class PizzaFactoryTest {
             pizza.box();
         }
     }
+
+    @Test
+    public void testFactoryReturnsNullForInvalidType() {
+        // Edge case: if the factory is ever called with a null type,
+        // it should not throw an exception, but degrade gracefully.
+        Pizza pizza = factory.pizzaOrder(null);
+        assertNull("Factory should return null for a null PizzaType", pizza);
+    }
+
+    @Test
+    public void testPizzaStoreOrdersPizzaSuccessfully() {
+        // Integration test: PizzaStore should successfully use the
+        // factory to produce and process a pizza end-to-end.
+        PizzaStore store = new PizzaStore(factory);
+        Pizza pizza = store.orderPizza(PizzaType.CHEESE);
+        assertNotNull("PizzaStore should successfully order a pizza", pizza);
+        assertTrue("Ordered pizza should be a CheesePizza", pizza instanceof CheesePizza);
+    }
 }

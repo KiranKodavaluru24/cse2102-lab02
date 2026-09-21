@@ -1,6 +1,10 @@
 public class PizzaFactory {
 
     public Pizza pizzaOrder(PizzaType type) {
+        if (type == null) {
+            return null;
+        }
+
         switch (type) {
             case CHEESE:
                 return new CheesePizza();
